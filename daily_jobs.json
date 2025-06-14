@@ -1,1 +1,15 @@
+{
+  "jobs": [
+    {
+      "date": "2025-06-14",
+      "company": "Demo Startup",
+      "role": "Software Engineer Intern",
+      "stack": "Python, Flask",
+      "location": "Remote",
+      "teamSize": "120",
+      "applyLink": "https://example.com/careers",
+      "status": "To Apply"
+    }
+  ]
+}
 
