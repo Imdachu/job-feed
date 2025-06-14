@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          persist-credentials: false  # We'll override with token manually
+          persist-credentials: false  # We override with token manually below
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -32,9 +32,7 @@ jobs:
           git fetch origin main
           git checkout main
           git reset --hard origin/main
+          git pull --rebase origin main || echo "Nothing to rebase"
           git add daily_jobs.json
           git commit -m "Auto-update daily_jobs.json" || echo "No changes"
-          git pull --rebase origin main || echo "Nothing to rebase"
           git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
-                
-                
