@@ -1,0 +1,31 @@
+name: Daily Job Feed Update
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Runs daily at 8:00 AM IST
+  workflow_dispatch:
+
+jobs:
+  update-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run fetch_jobs.py
+        run: python3 fetch_jobs.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add daily_jobs.json
+          git commit -m "Auto-update daily_jobs.json" || echo "No changes"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
