@@ -2,14 +2,23 @@
   "jobs": [
     {
       "date": "2025-06-14",
-      "company": "Demo Startup",
-      "role": "Software Engineer Intern",
-      "stack": "Python, Flask",
-      "location": "Remote",
-      "teamSize": "120",
-      "applyLink": "https://example.com/careers",
+      "company": "TechOrbit Labs",
+      "role": "Junior Full Stack Developer",
+      "stack": "JavaScript, Node.js, MongoDB",
+      "location": "Remote (India)",
+      "teamSize": "150",
+      "applyLink": "https://techorbitlabs.notion.site/Careers",
+      "status": "To Apply"
+    },
+    {
+      "date": "2025-06-14",
+      "company": "AlgoAnalytics",
+      "role": "AI Intern",
+      "stack": "Python, OpenCV, FastAPI",
+      "location": "Pune / Remote",
+      "teamSize": "200",
+      "applyLink": "https://algoanalytics.notion.site/jobs",
       "status": "To Apply"
     }
   ]
 }
-
